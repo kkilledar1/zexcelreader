@@ -5,7 +5,7 @@ $tmpfname="C:\Users\killekb\Documents\work related\Excelread\test.xlsx";
 $excelReader = PHPExcel_IOFactory::createReaderForFile($tmpfname);
 $excelObj=$excelObj->load($tmpfname);
 $worksheet=$excelObj->getActivesheet();
-$lastRow=$worksheet->getHighestRow():
+$lastRow=$worksheet->getHighestRow();
 
 echo "<table>";
 for ($row=1$row <=$lastRow;$row**)
