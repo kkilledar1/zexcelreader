@@ -1,5 +1,5 @@
 <?php
-require_once 'Classes/PHPexcel.php';
+include 'PHPExcel.php'
 
 $tmpfname="C:\Users\killekb\Documents\work related\Excelread\test.xlsx";
 $excelReader = PHPExcel_IOFactory::createReaderForFile($tmpfname);
