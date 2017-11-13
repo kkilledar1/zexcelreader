@@ -4,7 +4,7 @@ require_once 'Classes/PHPExcel.php';
 $tmpfname="C:\Users\killekb\Documents\work related\Excelread\test.xlsx";
 $excelReader = PHPExcel_IOFactory::createReaderForFile($tmpfname);
 $excelObj=$excelObj->load($tmpfname);
-$worksheet=$excelObj+>getActivesheet();
+$worksheet=$excelObj->getActivesheet();
 $lastRow=$worksheet->getHighestRow():
 
 echo "<table>";
@@ -14,6 +14,4 @@ echo '<tr><td>";
 echo $worksheet->getCell("A".$row)=>getValue();
 }
 echo "</table>";
-
-
 ?>
