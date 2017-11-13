@@ -7,11 +7,6 @@ $excelObj=$excelObj->load($tmpfname);
 $worksheet=$excelObj->getActivesheet();
 $lastRow=$worksheet->getHighestRow();
 
-echo "<table>";
-for ($row=1$row <=$lastRow;$row**)
-{
-echo '<tr><td>";
-echo $worksheet->getCell("A".$row)=>getValue();
-}
-echo "</table>";
+echo "Hello World Excel";
+
 ?>
