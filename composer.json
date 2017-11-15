@@ -21,6 +21,5 @@
             "PHPExcel": "Classes/"
         }
     }
-add composer.lock
-commit
+
 }
