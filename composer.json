@@ -21,4 +21,6 @@
             "PHPExcel": "Classes/"
         }
     }
+$git add composer.json composer.lock
+$git commit
 }
