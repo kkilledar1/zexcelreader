@@ -5,6 +5,7 @@ require_once dirname(__FILE__) . '/Classes/PHPExcel.php';
 //require_once ('PHPExcel.php');
 // Create new PHPExcel object
 echo 'Hello World';
+$searchValue = 'B';
 
  $tmpfname = "test.xls";
 		$excelReader = PHPExcel_IOFactory::createReaderForFile($tmpfname);
@@ -13,7 +14,7 @@ echo 'Hello World';
 		$lastRow = $worksheet->getHighestRow();
 		$rowIterator = $objPHPExcel->getActiveSheet()->getRowIterator()
 			
-$searchValue = 'B';
+
 		echo "<table>";
 		for ($row = 1; $row <= $lastRow; $row++) 
 		{
