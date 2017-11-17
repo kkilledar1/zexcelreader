@@ -13,7 +13,7 @@ echo 'Hello World';
 		$lastRow = $worksheet->getHighestRow();
 		
 $foundInCells = array();
-$searchValue = 'A';
+$searchValue = 'B';
 		echo "<table>";
 		for ($row = 1; $row <= $lastRow; $row++) {
 			 echo "<tr><td>";
