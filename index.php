@@ -14,15 +14,14 @@ $searchValue = 'B';
 		$lastRow = $worksheet->getHighestRow();
 		$rowIterator = $objPHPExcel->getActiveSheet()->getRowIterator();
 		
-		echo "<table>";
-		for ($row = 1; $row <= $lastRow; $row++) 
-		{
+		for ($row = 1; $row <= $lastRow; $row++) {
 			 echo "<tr><td>";
 			 echo $worksheet->getCell('A'.$row)->getValue();
 			 echo "</td><td>";
 			 echo $worksheet->getCell('B'.$row)->getValue();
 			 echo "</td><tr>";
-		if ($cell->getValue("A'.$row) == $searchValue)	{
+		
+			if ($cell->getValue("A'.$row) == $searchValue)	{
                         echo 'Found it';
                          }
 			 elseif {
