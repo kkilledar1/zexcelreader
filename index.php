@@ -22,4 +22,20 @@ echo 'Hello World';
 		}
 		echo "</table>";
 echo 'Excel read';
+
+$foundInCells = array();
+$searchValue = 'A';
+foreach ($objPHPExcel->getWorksheetIterator() as $worksheet) {
+    $ws = $worksheet->getTitle();
+    foreach ($worksheet->getRowIterator() as $row) {
+        $cellIterator = $row->getCellIterator();
+        $cellIterator->setIterateOnlyExistingCells(true);
+        foreach ($cellIterator as $cell) {
+            if ($cell->getValue() == $searchValue) {
+                $foundInCells[] = $ws . '!' . $cell->getCoordinate();
+            }
+        }
+    }
+}
+var_dump($foundInCells);
 ?>
