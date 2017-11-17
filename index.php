@@ -13,7 +13,6 @@ echo 'Hello World';
 		$lastRow = $worksheet->getHighestRow();
 		$rowIterator = $objPHPExcel->getActiveSheet()->getRowIterator()
 			
-$foundInCells = array();
 $searchValue = 'B';
 		echo "<table>";
 		for ($row = 1; $row <= $lastRow; $row++) 
