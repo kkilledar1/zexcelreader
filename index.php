@@ -9,7 +9,7 @@ echo 'Hello World';
  include('/Classes/PHPExcel/IOFactory.php');
 
   //Use whatever path to an Excel file you need.
-  $inputFileName = 'C:\Users\killekb\Documents\work related\Excelread\test.xlsx';
+  $inputFileName = 'C:\Users\killekb\Documents\work related\Excelread\test.xls';
 
   try {
     $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
