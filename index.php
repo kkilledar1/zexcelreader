@@ -27,8 +27,7 @@ $searchValue = 'B';
                         echo 'Found it';
                          }
 		}
-		//echo "</table>";
-                echo 'Excel read';
+		echo 'Excel read';
 
 
 ?>
