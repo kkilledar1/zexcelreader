@@ -15,7 +15,7 @@ $searchValue = 'B';
 		$rowIterator = $objPHPExcel->getActiveSheet()->getRowIterator()
 			
 
-		echo "<table>";
+		//echo "<table>";
 		for ($row = 1; $row <= $lastRow; $row++) 
 		{
 			 echo "<tr><td>";
@@ -28,7 +28,7 @@ $searchValue = 'B';
                         echo 'Found it';
                          }
 		}
-		echo "</table>";
+		//echo "</table>";
                 echo 'Excel read';
 
 
