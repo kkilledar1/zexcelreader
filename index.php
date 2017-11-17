@@ -21,4 +21,5 @@ echo 'Hello World';
 			 echo "</td><tr>";
 		}
 		echo "</table>";
+echo 'Excel read';
 ?>
