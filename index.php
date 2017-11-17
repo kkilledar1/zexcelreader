@@ -11,23 +11,25 @@ echo 'Hello World';
 		$excelObj = $excelReader->load($tmpfname);
 		$worksheet = $excelObj->getSheet(0);
 		$lastRow = $worksheet->getHighestRow();
-		
+		$rowIterator = $objPHPExcel->getActiveSheet()->getRowIterator()
+			
 $foundInCells = array();
 $searchValue = 'B';
 		echo "<table>";
-		for ($row = 1; $row <= $lastRow; $row++) {
+		for ($row = 1; $row <= $lastRow; $row++) 
+		{
 			 echo "<tr><td>";
 			 echo $worksheet->getCell('A'.$row)->getValue();
 			 echo "</td><td>";
 			 echo $worksheet->getCell('B'.$row)->getValue();
 			 echo "</td><tr>";
-			if ($cell->getValue() == $searchValue) {
-                $foundInCells[] = $ws . '!' . $cell->getCoordinate();
-            }
-			
+			if ($cell->getValue("A'.$row) == $searchValue)
+			{
+                        echo 'Found it';
+                         }
 		}
 		echo "</table>";
-echo 'Excel read';
+                echo 'Excel read';
 
-var_dump($foundInCells);
+
 ?>
