@@ -12,6 +12,8 @@ echo 'Hello World';
 		$worksheet = $excelObj->getSheet(0);
 		$lastRow = $worksheet->getHighestRow();
 		
+$foundInCells = array();
+$searchValue = 'A';
 		echo "<table>";
 		for ($row = 1; $row <= $lastRow; $row++) {
 			 echo "<tr><td>";
@@ -19,23 +21,13 @@ echo 'Hello World';
 			 echo "</td><td>";
 			 echo $worksheet->getCell('B'.$row)->getValue();
 			 echo "</td><tr>";
+			if ($cell->getValue() == $searchValue) {
+                $foundInCells[] = $ws . '!' . $cell->getCoordinate();
+            }
+			
 		}
 		echo "</table>";
 echo 'Excel read';
 
-$foundInCells = array();
-$searchValue = 'A';
-foreach ($objPHPExcel->getWorksheetIterator() as $worksheet) {
-    $ws = $worksheet->getTitle();
-    foreach ($worksheet->getRowIterator() as $row) {
-        $cellIterator = $row->getCellIterator();
-        $cellIterator->setIterateOnlyExistingCells(true);
-        foreach ($cellIterator as $cell) {
-            if ($cell->getValue() == $searchValue) {
-                $foundInCells[] = $ws . '!' . $cell->getCoordinate();
-            }
-        }
-    }
-}
 var_dump($foundInCells);
 ?>
