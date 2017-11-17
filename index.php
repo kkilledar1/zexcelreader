@@ -21,11 +21,11 @@ $searchValue = 'B';
 			 echo $worksheet->getCell('B'.$row)->getValue();
 			 echo "</td><tr>";
 		
-			if ($cell->getValue("A'.$row) == $searchValue)	{
-                        echo 'Found it';
+			if ($cell->getCell('A'.$row)->getValue() == $searchValue)	{
+                        echo "Found it";
                          }
-			 elseif {
-			 echo 'No results';
+			 else {
+			 echo "No results";
 			 }
 		}
 		echo 'Excel read';
