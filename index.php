@@ -20,7 +20,7 @@ $searchValue = 'B';
 			 echo $worksheet->getCell('B'.$row)->getValue();
 			 echo "</td><tr>";
 		
-			if ($cell->getCell('A'.$row)->getValue() == $searchValue)	{
+			if ($worksheet->getCell('A'.$row)->getValue() == $searchValue)	{
                         echo "Found it";
                          }
 			 else {
