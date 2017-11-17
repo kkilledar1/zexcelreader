@@ -6,7 +6,7 @@ require_once dirname(__FILE__) . '/Classes/PHPExcel.php';
 // Create new PHPExcel object
 echo 'Hello World';
 
- $tmpfname = "C:\Users\killekb\Documents\work related\Excelread\test.xls";
+ $tmpfname = "test.xls";
 		$excelReader = PHPExcel_IOFactory::createReaderForFile($tmpfname);
 		$excelObj = $excelReader->load($tmpfname);
 		$worksheet = $excelObj->getSheet(0);
