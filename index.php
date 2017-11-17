@@ -33,5 +33,6 @@ echo 'Hello World';
     echo '<pre>';
       print_r($rowData);
     echo '</pre>';
+   echo $rowData;
    }
 ?>
