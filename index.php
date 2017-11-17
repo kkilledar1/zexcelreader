@@ -12,8 +12,7 @@ $searchValue = 'B';
 		$excelObj = $excelReader->load($tmpfname);
 		$worksheet = $excelObj->getSheet(0);
 		$lastRow = $worksheet->getHighestRow();
-		$rowIterator = $objPHPExcel->getActiveSheet()->getRowIterator();
-		
+				
 		for ($row = 1; $row <= $lastRow; $row++) {
 			 echo "<tr><td>";
 			 echo $worksheet->getCell('A'.$row)->getValue();
