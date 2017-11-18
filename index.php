@@ -20,8 +20,8 @@ echo "<table>";
 			 //echo "</td><td>";
 			 //echo $worksheet->getCell('B'.$row)->getValue();
 			 //echo "</td><tr>";
-		
-			if ($worksheet->getCell('A'.$row)->getValue() == $searchValue)	{
+		$compare=$worksheet->getCell('A'.$row)->getValue();
+			if ($compare = $searchValue)	{
                         echo "Found it";
 				echo $worksheet->getCell(B.$row)->getValue();
                          }
