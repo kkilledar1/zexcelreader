@@ -32,8 +32,8 @@ echo "<table>";
 			 //return 0;
 				 //echo "No results";
 				 
-			 }
-		}
+			// }
+		//}
 
 echo "</table>";
 		//echo 'Excel read';
