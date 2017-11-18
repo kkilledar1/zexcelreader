@@ -27,7 +27,7 @@ echo "<table>";
 				break;
                          }
 		}	 
-			 echo 'No results';
+			 
 echo "</table>";
 		//echo 'Excel read';
 
