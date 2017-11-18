@@ -26,13 +26,8 @@ echo "<table>";
 			echo $column;
 				break;
                          }
-			 else {
-			 
-				 echo 'No results';
-				 
-			 }
-		}
-
+		}	 
+			 echo 'No results';
 echo "</table>";
 		//echo 'Excel read';
 
