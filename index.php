@@ -23,6 +23,7 @@ echo "<table>";
 		
 			if ($worksheet->getCell('A'.$row)->getValue() == $searchValue)	{
                         echo "Found it";
+				echo $cell->getCell(B.$row)->getValue();
                          }
 			 else {
 			 echo "No results";
