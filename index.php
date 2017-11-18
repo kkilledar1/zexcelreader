@@ -24,12 +24,12 @@ echo "<table>";
 			echo "$compare";
 			echo "$searchValue";
 			
-			if ($compare = $searchValue)	{
-                        echo "Found it";
-				echo $worksheet->getCell(B.$row)->getValue();
+			//if ($compare = $searchValue)	{
+                        //echo "Found it";
+			//	echo $worksheet->getCell(B.$row)->getValue();
                          }
-			 else {
-			 return 0;
+			 //else {
+			 //return 0;
 				 //echo "No results";
 				 
 			 }
