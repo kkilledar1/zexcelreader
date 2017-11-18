@@ -21,7 +21,9 @@ echo "<table>";
 			 //echo $worksheet->getCell('B'.$row)->getValue();
 			 //echo "</td><tr>";
 		$compare=$worksheet->getCell('A'.$row)->getValue();
+			$column =$worksheet->getcell('B'.$row)->getValue();
 			echo "$compare";
+			echo "$column";
 			//echo "$searchValue";
 			
 			//if ($compare = $searchValue)	{
