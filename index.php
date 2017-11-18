@@ -27,7 +27,7 @@ echo "<table>";
                          }
 			 else {
 			 
-				 echo "No results";
+				 exit;
 				 
 			 }
 		}
