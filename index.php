@@ -21,7 +21,7 @@ echo "<table>";
 			 //echo $worksheet->getCell('B'.$row)->getValue();
 			 //echo "</td><tr>";
 		
-			if ($worksheet->getCell('A'.$row)->getValue() == $searchValue)	{
+			if ($worksheet->getCell('A'.$row)->getValue() = $searchValue)	{
                         echo "Found it";
 				echo $worksheet->getCell(B.$row)->getValue();
                          }
