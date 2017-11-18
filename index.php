@@ -22,7 +22,7 @@ echo "<table>";
 			 //echo "</td><tr>";
 		$compare=$worksheet->getCell('A'.$row)->getValue();
 			$column =$worksheet->getcell('B'.$row)->getValue();
-			if ($compare = $searchValue)	{
+			if ($compare == $searchValue)	{
 			echo $column;
                          }
 			 //else {
