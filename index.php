@@ -26,11 +26,11 @@ echo "<table>";
 			echo $column;
 				break;
                          }
-			 //else {
+			 else {
 			 
-			//	 exit;
+				 echo 'No results';
 				 
-			 //}
+			 }
 		}
 
 echo "</table>";
