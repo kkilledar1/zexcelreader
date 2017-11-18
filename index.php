@@ -4,7 +4,7 @@ require_once dirname(__FILE__) . '/Classes/PHPExcel.php';
 //include "Classes/PHPExcel.php";
 //require_once ('PHPExcel.php');
 // Create new PHPExcel object
-echo 'Hello World';
+//echo 'Hello World';
 $searchValue = 'A';
 
  $tmpfname = "test.xls";
@@ -21,6 +21,9 @@ echo "<table>";
 			 //echo $worksheet->getCell('B'.$row)->getValue();
 			 //echo "</td><tr>";
 		$compare=$worksheet->getCell('A'.$row)->getValue();
+			echo "$compare";
+			echo "$searchValue";
+			
 			if ($compare = $searchValue)	{
                         echo "Found it";
 				echo $worksheet->getCell(B.$row)->getValue();
