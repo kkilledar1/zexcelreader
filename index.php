@@ -14,7 +14,7 @@ $searchValue = 'A';
 		$lastRow = $worksheet->getHighestRow();
 		
 echo "<table>";
-		for ($row = 1; $row <= $lastRow; $row++) {
+		for ($row = 2; $row <= $lastRow; $row++) {
 			 //echo "<tr><td>";
 			 //echo $worksheet->getCell('A'.$row)->getValue();
 			 //echo "</td><td>";
@@ -22,18 +22,14 @@ echo "<table>";
 			 //echo "</td><tr>";
 		$compare=$worksheet->getCell('A'.$row)->getValue();
 			$column =$worksheet->getcell('B'.$row)->getValue();
-			
-			echo "$searchValue";
-			
-			//if ($compare = $searchValue)	{
-                        //echo "Found it";
-			//	echo $worksheet->getCell(B.$row)->getValue();
+			if ($compare = $searchValue)	{
+			echo $column;
                          }
 			 //else {
 			 //return 0;
 				 //echo "No results";
 				 
-			// }
+			 }
 		//}
 
 echo "</table>";
