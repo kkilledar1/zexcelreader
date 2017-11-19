@@ -23,7 +23,7 @@ $searchValue = $affloc;
 		$worksheet = $excelObj->getSheet(0);
 		$lastRow = $worksheet->getHighestRow();
 		
-echo "<table>";
+//echo "<table>";
 		for ($row = 1; $row <= $lastRow; $row++) {
 			 //echo "<tr><td>";
 			 //echo $worksheet->getCell('A'.$row)->getValue();
@@ -38,12 +38,12 @@ echo "<table>";
 				break;
                          }
 		}	 
-			 echo $column;
+			 //echo $column;
 
 if (empty($column)){
 	echo "No results";
 }
-echo "</table>";
+//echo "</table>";
 		//echo 'Excel read';
  
     $response = new \stdClass();
