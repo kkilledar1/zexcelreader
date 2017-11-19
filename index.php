@@ -47,7 +47,7 @@ if (empty($column)){
 		//echo 'Excel read';
  
     $response = new \stdClass();
-    $response->speech = $column;
+    $response->speech = "Hello World";
     $response->displayText = $column;
     $response->source = "webhook";
     echo json_encode($response);
