@@ -1,11 +1,21 @@
 <?php
+$method = $_SERVER['REQUEST_METHOD'];
+ 
+// Process only when method is POST
+if($method == 'POST'){
+    $requestBody = file_get_contents('php://input');
+    $json = json_decode($requestBody);
+ 
+    $affloc = $json->result->parameters->affloc;
+ 
+
 /** Include PHPExcel **/
 require_once dirname(__FILE__) . '/Classes/PHPExcel.php';
 //include "Classes/PHPExcel.php";
 //require_once ('PHPExcel.php');
 // Create new PHPExcel object
 //echo 'Hello World';
-$searchValue = 'C';
+$searchValue = $affloc;
 
  $tmpfname = "test.xls";
 		$excelReader = PHPExcel_IOFactory::createReaderForFile($tmpfname);
@@ -35,5 +45,10 @@ if (empty($column)){
 }
 echo "</table>";
 		//echo 'Excel read';
-
+ 
+    $response = new \stdClass();
+    $response->speech = $column;
+    $response->displayText = $column;
+    $response->source = "webhook";
+    echo json_encode($response);
 ?>
