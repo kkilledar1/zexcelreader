@@ -30,7 +30,7 @@ echo "<table>";
 		}	 
 			 echo $column;
 
-if ($column=" "){
+if (empty($column)){
 	echo "No results";
 }
 echo "</table>";
