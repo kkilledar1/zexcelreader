@@ -5,7 +5,7 @@ require_once dirname(__FILE__) . '/Classes/PHPExcel.php';
 //require_once ('PHPExcel.php');
 // Create new PHPExcel object
 //echo 'Hello World';
-$searchValue = 'B';
+$searchValue = 'A';
 
  $tmpfname = "test.xls";
 		$excelReader = PHPExcel_IOFactory::createReaderForFile($tmpfname);
@@ -21,13 +21,18 @@ echo "<table>";
 			 //echo $worksheet->getCell('B'.$row)->getValue();
 			 //echo "</td><tr>";
 		$compare=$worksheet->getCell('A'.$row)->getValue();
-			$column =$worksheet->getcell('B'.$row)->getValue();
+			
 			if ($compare == $searchValue)	{
-			echo $column;
+			$column =$worksheet->getcell('B'.$row)->getValue();
+				
 				break;
                          }
 		}	 
-			 
+			 echo $column;
+
+if ($column=" "){
+	echo "No results";
+}
 echo "</table>";
 		//echo 'Excel read';
 
