@@ -41,8 +41,8 @@ require_once dirname(__FILE__) . '/Classes/PHPExcel.php';
 			 //echo $column;
 
 if (empty($column)){
-	$column='No results from search';
-	echo "No results";
+	$column="No results from search";
+	//echo "No results";
 }
 //echo "</table>";
 		//echo 'Excel read';
