@@ -6,7 +6,7 @@ $method = $_SERVER['REQUEST_METHOD'];
     $requestBody = file_get_contents('php://input');
     $json = json_decode($requestBody);
  
-    $searchValue= $json->result->parameters->affloc;
+    $searchValue= $json->result->parameters->cirno;
  
 
 /** Include PHPExcel **/
@@ -35,7 +35,11 @@ require_once dirname(__FILE__) . '/Classes/PHPExcel.php';
 			
 			if ($compare == $searchValue)	{
 			$column =$worksheet->getcell('J'.$row)->getValue();
-			$speech= "CIR status is $column";	
+			$speech= "CIR status is $column";
+				$CIRlead=$worksheet->getcell('L'.$row)->getValue();
+				$projecttype=$worksheet->getcell('I'.$row)->getValue();
+				$processarea=$worksheet->getcell('D'.$row)->getValue();
+				$priority=$worksheet->getcell('M'.$row)->getValue();
 				break;
                          }
 		}	 
@@ -49,7 +53,7 @@ if (empty($column)){
 		//echo 'Excel read';
  
     $response = new \stdClass();
-    $response->speech = "$speech";
+    $response->speech = ("$speech","$CIRlead");
     $response->displayText = $speech;
     $response->source = "webhook";
     echo json_encode($response);
