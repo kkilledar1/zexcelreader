@@ -20,7 +20,8 @@ require_once dirname(__FILE__) . '/Classes/PHPExcel.php';
  $tmpfname = "GRC details.xls";
 		$excelReader = PHPExcel_IOFactory::createReaderForFile($tmpfname);
 		$excelObj = $excelReader->load($tmpfname);
-		$worksheet = $excelObj->getSheet(1);
+//$objReader->setLoadSheetsOnly($sheetname)
+		$worksheet = $excelObj->getSheet('Sheet2');
 		$lastRow = $worksheet->getHighestRow();
 		
 //echo "<table>";
