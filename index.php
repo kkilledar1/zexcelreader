@@ -17,7 +17,7 @@ require_once dirname(__FILE__) . '/Classes/PHPExcel.php';
 //echo 'Hello World';
 //$searchValue = $affloc;
 
- $tmpfname = "GRC details.xls";
+ $tmpfname = "CIR tracker.xls";
 		$excelReader = PHPExcel_IOFactory::createReaderForFile($tmpfname);
 		$excelObj = $excelReader->load($tmpfname);
 //$objReader->setLoadSheetsOnly($sheetname)
@@ -34,15 +34,15 @@ require_once dirname(__FILE__) . '/Classes/PHPExcel.php';
 		$compare=$worksheet->getCell('A'.$row)->getValue();
 			
 			if ($compare == $searchValue)	{
-			$column =$worksheet->getcell('B'.$row)->getValue();
-			$speech= "Your security coordinator is $column";	
+			$column =$worksheet->getcell('J'.$row)->getValue();
+			$speech= "CIR status is $column";	
 				break;
                          }
 		}	 
 			 //echo $column;
 
 if (empty($column)){
-	$speech="No results from search.Please contact Helpdesk";
+	$speech="No results from search.Please contact CIR Helpdesk";
 	//echo "No results";
 }
 //echo "</table>";
