@@ -21,7 +21,7 @@ require_once dirname(__FILE__) . '/Classes/PHPExcel.php';
 		$excelReader = PHPExcel_IOFactory::createReaderForFile($tmpfname);
 		$excelObj = $excelReader->load($tmpfname);
 //$objReader->setLoadSheetsOnly($sheetname)
-		$worksheet = $excelObj->getSheet('Sheet2');
+		$worksheet = $excelObj->getSheet(0);
 		$lastRow = $worksheet->getHighestRow();
 		
 //echo "<table>";
