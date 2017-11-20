@@ -42,14 +42,14 @@ require_once dirname(__FILE__) . '/Classes/PHPExcel.php';
 			 //echo $column;
 
 if (empty($column)){
-	$column="No results from search";
+	$column="No results from search.Please contact Helpdesk";
 	//echo "No results";
 }
 //echo "</table>";
 		//echo 'Excel read';
  
     $response = new \stdClass();
-    $response->speech = $column;
+    $response->speech = "Security coordinator is $column";
     $response->displayText = $column;
     $response->source = "webhook";
     echo json_encode($response);
