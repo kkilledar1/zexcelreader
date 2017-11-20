@@ -35,22 +35,22 @@ require_once dirname(__FILE__) . '/Classes/PHPExcel.php';
 			
 			if ($compare == $searchValue)	{
 			$column =$worksheet->getcell('B'.$row)->getValue();
-				
+			$speech= "Your security coordinator is $column";	
 				break;
                          }
 		}	 
 			 //echo $column;
 
 if (empty($column)){
-	$column="No results from search.Please contact Helpdesk";
+	$speech="No results from search.Please contact Helpdesk";
 	//echo "No results";
 }
 //echo "</table>";
 		//echo 'Excel read';
  
     $response = new \stdClass();
-    $response->speech = "Security coordinator is $column";
-    $response->displayText = $column;
+    $response->speech = "$speech";
+    $response->displayText = $speech;
     $response->source = "webhook";
     echo json_encode($response);
 //}
