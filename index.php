@@ -17,10 +17,10 @@ require_once dirname(__FILE__) . '/Classes/PHPExcel.php';
 //echo 'Hello World';
 //$searchValue = $affloc;
 
- $tmpfname = "test.xls";
+ $tmpfname = "GRC details.xls";
 		$excelReader = PHPExcel_IOFactory::createReaderForFile($tmpfname);
 		$excelObj = $excelReader->load($tmpfname);
-		$worksheet = $excelObj->getSheet(0);
+		$worksheet = $excelObj->getSheet(1);
 		$lastRow = $worksheet->getHighestRow();
 		
 //echo "<table>";
