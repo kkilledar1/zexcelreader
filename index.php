@@ -55,11 +55,11 @@ if (empty($column)){
  
     $response = new \stdClass();
 
-if $action="findcirrecord" {
+if ($action="findcirrecord") {
 	$speech= "CIR status is $column";
 }
-elseif $action="smalltalk.agent.boss" {
-	$speech =" CIR lead is $CIRlead":
+elseif ($action="smalltalk.agent.boss") {
+	$speech =" CIR lead is $CIRlead";
 }
 
     $response->speech = "$speech";
