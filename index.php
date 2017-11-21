@@ -56,20 +56,21 @@ if (empty($column)){
     $response = new \stdClass();
 if (empty($column)){
 	$speech="No results from search.Please contact CIR Helpdesk";
+}
 	
-	else if ($action=="findcirrecord") {
+	elseif ($action=="findcirrecord") {
 		$speech= "CIR status is $column";
 	
 	//echo "No results";
 		}
-	else if ($action=="findcirlead") {
+	elseif ($action=="findcirlead") {
 	$speech =" CIR lead is $CIRlead";
 	}
 
-	else if ($action=="findprocarea"){
+	elseif ($action=="findprocarea"){
 	$speech="This CIR is managed by $processarea";
 	}
-	}
+	
     $response->speech = "$speech";
     $response->displayText = $speech;
     $response->source = "webhook";
