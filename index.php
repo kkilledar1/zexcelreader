@@ -7,6 +7,7 @@ $method = $_SERVER['REQUEST_METHOD'];
     $json = json_decode($requestBody);
  
     $searchValue= $json->result->parameters->cirno;
+$action=$json->result->action;
  
 
 /** Include PHPExcel **/
@@ -35,7 +36,7 @@ require_once dirname(__FILE__) . '/Classes/PHPExcel.php';
 			
 			if ($compare == $searchValue)	{
 			$column =$worksheet->getcell('J'.$row)->getValue();
-			$speech= "CIR status is $column";
+			//$speech= "CIR status is $column";
 				$CIRlead=$worksheet->getcell('L'.$row)->getValue();
 				$projecttype=$worksheet->getcell('I'.$row)->getValue();
 				$processarea=$worksheet->getcell('D'.$row)->getValue();
@@ -53,6 +54,14 @@ if (empty($column)){
 		//echo 'Excel read';
  
     $response = new \stdClass();
+
+if $action="findcirrecord" {
+	$speech= "CIR status is $column";
+}
+elseif $action="smalltalk.agent.boss" {
+	$speech =" CIR lead is $CIRlead":
+}
+
     $response->speech = "$speech";
     $response->displayText = $speech;
     $response->source = "webhook";
