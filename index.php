@@ -57,16 +57,16 @@ if (empty($column)){
 if (empty($column)){
 	$speech="No results from search.Please contact CIR Helpdesk";
 	
-	elseif ($action=="findcirrecord") {
+	else if ($action=="findcirrecord") {
 		$speech= "CIR status is $column";
 	
 	//echo "No results";
 		}
-	elseif ($action=="findcirlead") {
+	else if ($action=="findcirlead") {
 	$speech =" CIR lead is $CIRlead";
 	}
 
-	elseif ($action=="findprocarea"){
+	else if ($action=="findprocarea"){
 	$speech="This CIR is managed by $processarea";
 	}
 	}
