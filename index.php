@@ -56,7 +56,7 @@ if (empty($column)){
     $response = new \stdClass();
 if (empty($column)){
 	$speech="No results from search.Please contact CIR Helpdesk";
-	{
+	
 	elseif ($action=="findcirrecord") {
 		$speech= "CIR status is $column";
 	
