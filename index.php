@@ -61,7 +61,7 @@ if ($action=="findcirrecord") {
 elseif ($action=="findcirlead") {
 	$speech =" CIR lead is $CIRlead";
 }
-else ($action=="findprocarea"){
+elseif ($action=="findprocarea"){
 	$speech="This CIR is managed by $processarea";
 }
 
