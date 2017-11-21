@@ -54,19 +54,22 @@ if (empty($column)){
 		//echo 'Excel read';
  
     $response = new \stdClass();
-
-if ($action=="findcirrecord") {
-	$speech= "CIR status is $column";
-}
-
-if ($action=="findcirlead") {
+if (empty($column)){
+	$speech="No results from search.Please contact CIR Helpdesk";
+	{
+	elseif ($action=="findcirrecord") {
+		$speech= "CIR status is $column";
+	
+	//echo "No results";
+		}
+	elseif ($action=="findcirlead") {
 	$speech =" CIR lead is $CIRlead";
-}
+	}
 
-if ($action=="findprocarea"){
+	elseif ($action=="findprocarea"){
 	$speech="This CIR is managed by $processarea";
-}
-
+	}
+	}
     $response->speech = "$speech";
     $response->displayText = $speech;
     $response->source = "webhook";
