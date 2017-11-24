@@ -71,7 +71,10 @@ if (empty($column)){
 	$speech="This CIR is managed by $processarea";
 	}
 	
-    $response->speech = "$speech";
+$Filter_out = array ();
+$Filter_out = ('1','2','3');
+    //$response->speech = "$speech";
+$response->speech ="$Flter_out;
     $response->displayText = $speech;
     $response->source = "webhook";
     echo json_encode($response);
