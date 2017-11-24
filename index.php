@@ -41,8 +41,8 @@ require_once dirname(__FILE__) . '/Classes/PHPExcel.php';
 				$projecttype=$worksheet->getcell('I'.$row)->getValue();
 				$processarea=$worksheet->getcell('D'.$row)->getValue();
 				$priority=$worksheet->getcell('M'.$row)->getValue();
-				$Filter_out[ ]=$column;
-				//break;
+				$Filter_out[$row]=$column;
+				 				//break;
                          }
 		}	 
 			 //echo $column;
@@ -75,9 +75,9 @@ if (empty($column)){
 //$Filter_out = array ();
 //$Filter_out = array ('1','2','3');
     //$response->speech = "$speech";
-$response->speech ="$Flter_out";
+$response->speech ="$Flter_out[]";
   //$response->displayText = $speech;
-$response->displayText = $Filter_out;
+$response->displayText = $Filter_out[];
     $response->source = "webhook";
     echo json_encode($response);
 //}
