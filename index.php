@@ -41,7 +41,8 @@ require_once dirname(__FILE__) . '/Classes/PHPExcel.php';
 				$projecttype=$worksheet->getcell('I'.$row)->getValue();
 				$processarea=$worksheet->getcell('D'.$row)->getValue();
 				$priority=$worksheet->getcell('M'.$row)->getValue();
-				break;
+				$Filter_out[ ]=$column;
+				//break;
                          }
 		}	 
 			 //echo $column;
@@ -72,7 +73,7 @@ if (empty($column)){
 	}
 	
 //$Filter_out = array ();
-$Filter_out = array ('1','2','3');
+//$Filter_out = array ('1','2','3');
     //$response->speech = "$speech";
 $response->speech ="$Flter_out";
   //$response->displayText = $speech;
