@@ -79,7 +79,7 @@ $response->speech ="$Filter_out";
   //$response->displayText = $speech;
 $response->displayText = $Filter_out;
     $response->source = "webhook";
-    echo json_encode($response);
+    echo json_encode(arreay ($response));
 //}
 //else
 //{
