@@ -77,9 +77,9 @@ if (empty($column)){
     //$response->speech = "$speech";
 $response->speech ="$Filter_out";
   //$response->displayText = $speech;
-$response->displayText = $Filter_out;
+$response->displayText = "$Filter_out[$row]";
     $response->source = "webhook";
-    echo json_encode(arreay ($response));
+    echo json_encode($response);
 //}
 //else
 //{
