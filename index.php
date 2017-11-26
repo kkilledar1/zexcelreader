@@ -71,13 +71,13 @@ if (empty($column)){
 	elseif ($action=="findprocarea"){
 	$speech="This CIR is managed by $processarea";
 	}
-	
+$tmp_column=implode (" ",$Filter_out));	
 //$Filter_out = array ();
 //$Filter_out = array ('1','2','3');
     //$response->speech = "$speech";
-$response->speech ="$Filter_out";
+$response->speech ="$tmp_column";
   //$response->displayText = $speech;
-$response->displayText[] = $Filter_out;
+$response->displayText= $tmp_column;
     $response->source = "webhook";
     echo json_encode($response);
 //}
