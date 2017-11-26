@@ -18,7 +18,8 @@ require_once dirname(__FILE__) . '/Classes/PHPExcel.php';
 //echo 'Hello World';
 //$searchValue = $affloc;
 
- $tmpfname = "CIR tracker.xls";
+// $tmpfname = "CIR tracker.xls";
+$tmpfname = "PEG.xls";
 		$excelReader = PHPExcel_IOFactory::createReaderForFile($tmpfname);
 		$excelObj = $excelReader->load($tmpfname);
 //$objReader->setLoadSheetsOnly($sheetname)
@@ -35,7 +36,8 @@ require_once dirname(__FILE__) . '/Classes/PHPExcel.php';
 		$compare=$worksheet->getCell('A'.$row)->getValue();
 			
 			if ($compare == $searchValue)	{
-			$column =$worksheet->getcell('J'.$row)->getValue();
+			//$column =$worksheet->getcell('J'.$row)->getValue();
+				$column =$worksheet->getcell('B'.$row)->getValue();
 			//$speech= "CIR status is $column";
 				$CIRlead=$worksheet->getcell('L'.$row)->getValue();
 				$projecttype=$worksheet->getcell('I'.$row)->getValue();
