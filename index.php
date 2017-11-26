@@ -71,7 +71,7 @@ if (empty($column)){
 	elseif ($action=="findprocarea"){
 	$speech="This CIR is managed by $processarea";
 	}
-$tmp_column=implode (" ",$Filter_out));	
+$tmp_column=implode (" ",$Filter_out);	
 //$Filter_out = array ();
 //$Filter_out = array ('1','2','3');
     //$response->speech = "$speech";
