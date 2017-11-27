@@ -18,74 +18,58 @@ require_once dirname(__FILE__) . '/Classes/PHPExcel.php';
 //echo 'Hello World';
 //$searchValue = $affloc;
 
-// $tmpfname = "CIR tracker.xls";
-$tmpfname = "PEG.xls";
+$tmpfname = "CIR tracker.xls";
+//$tmpfname = "PEG.xls";
 		$excelReader = PHPExcel_IOFactory::createReaderForFile($tmpfname);
 		$excelObj = $excelReader->load($tmpfname);
-//$objReader->setLoadSheetsOnly($sheetname)
+
 		$worksheet = $excelObj->getSheet(0);
 		$lastRow = $worksheet->getHighestRow();
 		
-//echo "<table>";
 		for ($row = 1; $row <= $lastRow; $row++) {
-			 //echo "<tr><td>";
-			 //echo $worksheet->getCell('A'.$row)->getValue();
-			 //echo "</td><td>";
-			 //echo $worksheet->getCell('B'.$row)->getValue();
-			 //echo "</td><tr>";
-		$compare=$worksheet->getCell('A'.$row)->getValue();
+			 
+			$compare=$worksheet->getCell('A'.$row)->getValue();
 			
 			if ($compare == $searchValue)	{
-			//$column =$worksheet->getcell('J'.$row)->getValue();
-				$column =$worksheet->getcell('B'.$row)->getValue();
-			//$speech= "CIR status is $column";
+				$column =$worksheet->getcell('J'.$row)->getValue();
 				$CIRlead=$worksheet->getcell('L'.$row)->getValue();
 				$projecttype=$worksheet->getcell('I'.$row)->getValue();
 				$processarea=$worksheet->getcell('D'.$row)->getValue();
 				$priority=$worksheet->getcell('M'.$row)->getValue();
-				$Filter_out[$row]=$column;
-				 				//break;
-                         }
-		}	 
-			 //echo $column;
-
-if (empty($column)){
-	$speech="No results from search.Please contact CIR Helpdesk";
-	//echo "No results";
-}
-//echo "</table>";
-		//echo 'Excel read';
+				//$Filter_out[$row]=$column;
+				break;
+                                                         }
+		                                          }	 
+			
+//if (empty($column)){
+//	$speech="No results from search.Please contact CIR Helpdesk";
+	  //         }
  
     $response = new \stdClass();
 if (empty($column)){
 	$speech="No results from search.Please contact CIR Helpdesk";
-}
+                   }
 	
 	elseif ($action=="findcirrecord") {
 		$speech= "CIR status is $column";
+	              			}
 	
-	//echo "No results";
-		}
-	elseif ($action=="findcirlead") {
+        elseif ($action=="findcirlead") {
 	$speech =" CIR lead is $CIRlead";
-	}
+	                                }
 
 	elseif ($action=="findprocarea"){
 	$speech="This CIR is managed by $processarea";
-	}
-$tmp_column=implode (" ",$Filter_out);	
+	                                 }
+//$tmp_column=implode (" ",$Filter_out);	
 //$Filter_out = array ();
 //$Filter_out = array ('1','2','3');
-    //$response->speech = "$speech";
-$response->speech ="$tmp_column";
-  //$response->displayText = $speech;
-$response->displayText= $tmp_column;
+   $response->speech = "$speech";
+//$response->speech ="$tmp_column";
+  $response->displayText = $speech;
+ //$response->displayText= $tmp_column;
     $response->source = "webhook";
     echo json_encode($response);
-//}
-//else
-//{
-  //  echo "Method not allowed";
-//}
+
  
 ?>
