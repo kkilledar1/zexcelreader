@@ -37,7 +37,7 @@ $tmpfname = "CIR tracker.xls";
 				$processarea=$worksheet->getcell('D'.$row)->getValue();
 				$priority=$worksheet->getcell('M'.$row)->getValue();
 				//$Filter_out[$row]=$column;
-				$excelObj1->$worksheet->setCellValue('Z', 'Read');
+				$excelObj1->$worksheet->setCellValue('Z'.$row, 'Read');
 				break;
                                                          }
 		                                          }	 
